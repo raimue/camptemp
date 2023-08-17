@@ -1,0 +1,7 @@
+maubot: 0.1.0
+id: de.codingfarm.camptemp
+version: 0.0.1
+license: MIT
+modules:
+- camptemp
+main_class: CampTempBot
