@@ -31,7 +31,7 @@ class CampTempBot(Plugin):
         url = API_URL + str(sensorid)
         response = urllib.request.urlopen(url)
         data = json.loads(response.read())
-        if not data:
+        if data is None:
             return None
         value = data['v']
         return value
@@ -53,7 +53,7 @@ class CampTempBot(Plugin):
                         subcontent += f"{sublabel} {subvalue}{subunit}"
             else:
                 value = self.get_sensor(sensorid)
-                if value:
+                if value is not None:
                     subcontent = f"{label} {value}{unit}"
             if subcontent != "":
                 if content != "":
